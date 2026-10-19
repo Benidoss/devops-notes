@@ -29,4 +29,4 @@ mv *.txt ../rh/                       # tous les .txt du dossier actuel
 > ```bash
 > mv -i rapport.txt ../rh/
 > ```
-</p>  # mv -i rapport.txt ../rh/
+# mv -i rapport.txt ../rh/
