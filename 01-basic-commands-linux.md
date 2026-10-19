@@ -1,4 +1,4 @@
-**Les commandes de gestion de fichier dans Linux**
+# Les commandes de gestion de fichier dans Linux
 
 With the command **mkdir** :                # mkdir new_folder
    -I created the folders : 
