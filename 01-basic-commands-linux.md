@@ -29,9 +29,11 @@ I modified the file ``ia.txt``**`` in ``**``science_of_ia.txt``                 
 Still using ``mv`` I moved the file ``devops.txt`` in folder ``rh``                      # mv devops.txt ../rh/
 
 ### Others small advanced tips with ``mv``
+``
   mv rapport.txt ../rh/rapport_2026.txt                                                  # move et modify
   mv fichier1.txt fichier2.txt ../rh/                                                    # plusieurs fichiers vers un dossier
   mv *.txt ../rh/                                                                        # tous les .txt du dossier actuel
+``
 
 ```bash
 > [!WARNING]
