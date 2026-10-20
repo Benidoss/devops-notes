@@ -43,15 +43,15 @@ I modified the file
   mv *.txt ../rh/                                                                        # tous les .txt du dossier actuel
 ```
 
-```bash
-> [!WARNING]
-> `mv` écrase sans prévenir un fichier qui porte déjà le même nom dans la destination.
-> Ajoutez `-i` (*interactive*) pour que `mv` demande confirmation avant d'écraser :
->
-> ```bash
->       mv -i rapport.txt ../rh/
-> ```
-```
+
+  > [!WARNING]
+  > `mv` écrase sans prévenir un fichier qui porte déjà le même nom dans la destination.
+  > Ajoutez `-i` (*interactive*) pour que `mv` demande confirmation avant d'écraser :
+  >
+  > ```bash
+  >       mv -i rapport.txt ../rh/
+  > ```
+
 
 
 ## Other useful commands and advanced tips
