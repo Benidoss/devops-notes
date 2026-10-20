@@ -66,16 +66,15 @@ I removed the file
   rm -r dossier                                                                            # supprimer un dossier ET tout son contenu (-r = récursif)
 
 ```
-### Options utiles 
->[!TIP]
+
+>[!TIP] "Options utiles "
 > `i`	Demande confirmation pour chaque fichier. C’est la plus sûre.\
 > `I`	Demande une seule confirmation si vous supprimez plus de 3 fichiers ou un dossier. C’est un bon compromis.\
 > `v`	Affiche chaque fichier supprimé (verbose). On voit ce qui se passe.\
 > `r`	Supprime les dossiers et leur contenu.\
 > `f`	Force : aucune question, aucun message d’erreur.\
 
-### Les astuces de prudence
->[!WARNING]
+>[!WARNING] "Les astuces de prudence"
 
 ## Other useful commands and advanced tips
 
