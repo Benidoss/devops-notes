@@ -15,7 +15,6 @@
 ```
 
 
-
 ## With the command ``touch``, 
 I created in folder ``computerScience`` the files ``.txt`` such as :
   ```bash
@@ -53,6 +52,30 @@ I modified the file
   > ```
 
 
+## With the command ``rm``
+I removed the file 
+``` bash
+    development.txt                                                                        # supprimer un fichier 
+```
+
+### Others small advanced tips with ``rm`` 
+```bash
+  rm fichier1.txt fichier2.txt                                                             # supprimer plusieurs fichiers
+  rm *.log                                                                                 # supprimer tous les fichiers .log du dossier
+  rmdir dossier                                                                            # supprimer un dossier VIDE uniquement
+  rm -r dossier                                                                            # supprimer un dossier ET tout son contenu (-r = récursif)
+
+```
+### Options utiles 
+>[!TIP]
+> `i`	Demande confirmation pour chaque fichier. C’est la plus sûre.
+> `I`	Demande une seule confirmation si vous supprimez plus de 3 fichiers ou un dossier. C’est un bon compromis.
+> `v`	Affiche chaque fichier supprimé (verbose). On voit ce qui se passe.
+> `r`	Supprime les dossiers et leur contenu.
+> `f`	Force : aucune question, aucun message d’erreur.
+
+### Les astuces de prudence
+>[!WARNING]
 
 ## Other useful commands and advanced tips
 
