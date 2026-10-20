@@ -6,34 +6,42 @@
 
   ```bash
     exercises then, entreprise 
-    accounting,rh,computerScience    # mkdir -p entreprises/{accounting,rh,computerScience}.txt
+    accounting,rh,computerScience                                                      # mkdir -p entreprises/{accounting,rh,computerScience}.txt
   ```
 
 ### Others small advanced tips with ``mkdir``
-mkdir week{1..8}                                                                       # creates week1 to week8 ({1..8} = nomber sequence)
+```bash
+  mkdir week{1..8}                                                                       # creates week1 to week8 ({1..8} = nomber sequence)
+```
 
 
 
 ## With the command ``touch``, 
 I created in folder ``computerScience`` the files ``.txt`` such as :
-  
-  ``development.txt, devops.txt, ia.txt``                                               # touch file.txt
+  ```bash
+    development.txt, devops.txt, ia.txt                                                 # touch file.txt
+  ```
 
 ### Others small advanced tips with ``touch``
+```bash
   touch rapport_{mondy,tuesday,wednesday}.txt                                           # one-click file creation
+```
   
 
 
 ## With the command ``mv`` :
-I modified the file ``ia.txt``**`` in ``**``science_of_ia.txt``                          # mv file.txt new_file.txt
-Still using ``mv`` I moved the file ``devops.txt`` in folder ``rh``                      # mv devops.txt ../rh/
+I modified the file 
+```bash
+  ia.txt in science_of_ia.txt                                                           # mv file.txt new_file.txt
+  Still using `mv` I moved the file `devops.txt` in folder `rh`                         # mv devops.txt ../rh/
+```
 
 ### Others small advanced tips with ``mv``
-``
+```bash
   mv rapport.txt ../rh/rapport_2026.txt                                                  # move et modify
   mv fichier1.txt fichier2.txt ../rh/                                                    # plusieurs fichiers vers un dossier
   mv *.txt ../rh/                                                                        # tous les .txt du dossier actuel
-``
+```
 
 ```bash
 > [!WARNING]
