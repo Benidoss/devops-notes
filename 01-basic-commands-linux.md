@@ -68,11 +68,11 @@ I removed the file
 ```
 ### Options utiles 
 >[!TIP]
-> `i`	Demande confirmation pour chaque fichier. C’est la plus sûre.
-> `I`	Demande une seule confirmation si vous supprimez plus de 3 fichiers ou un dossier. C’est un bon compromis.
-> `v`	Affiche chaque fichier supprimé (verbose). On voit ce qui se passe.
-> `r`	Supprime les dossiers et leur contenu.
-> `f`	Force : aucune question, aucun message d’erreur.
+> `i`	Demande confirmation pour chaque fichier. C’est la plus sûre.\n
+> `I`	Demande une seule confirmation si vous supprimez plus de 3 fichiers ou un dossier. C’est un bon compromis.\n
+> `v`	Affiche chaque fichier supprimé (verbose). On voit ce qui se passe.\n
+> `r`	Supprime les dossiers et leur contenu.\n
+> `f`	Force : aucune question, aucun message d’erreur.\n
 
 ### Les astuces de prudence
 >[!WARNING]
