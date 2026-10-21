@@ -74,7 +74,8 @@ I removed the file
 > `r`	Supprime les dossiers et leur contenu.\
 > `f`	Force : aucune question, aucun message d’erreur.\
 
->[!WARNING] "Les astuces de prudence"\
+## Les astuces de prudence
+>[!WARNING]
 
 ## Other useful commands and advanced tips
 
@@ -91,4 +92,29 @@ I removed the file
   `find ~ -name "*.txt"                                                                   # chercher des fichiers
   `grep "mot" fichier.txt`                                                                # chercher du texte dans un fichier
 
+```
+
+```bash
+  cd ~
+  mkdir -p test/a/b/c        # dossiers imbriqués
+  mkdir -p test/{x,y,z}      # dossiers côte à côte
+  touch test/.secret         # un fichier caché (le point au début)
+  ls test                    # .secret n'apparaît pas
+  ls -a test                 # .secret apparaît
+  rm -r test                 # on nettoie
+```
+
+## Les commandes de base pour créer des users et établir des droits 
+
+```bash
+  chmod 755 script.sh        # droits en chiffres
+  chmod u+x script.sh        # ajouter l'exécution au propriétaire (u=user, g=group, o=others)
+  chmod o-r fichier.txt      # retirer la lecture aux autres
+  sudo chown beni:devops fichier.txt   # changer le propriétaire et le groupe
+  whoami                     # quel utilisateur suis-je ?
+  id                         # mon identifiant et mes groupes
+  sudo adduser stagiaire     # créer un utilisateur (interactif, crée son dossier /home)
+  sudo groupadd equipe       # créer un groupe
+  sudo usermod -aG equipe stagiaire    # ajouter stagiaire au groupe equipe
+  su - stagiaire             # devenir stagiaire (exit pour revenir)
 ```
