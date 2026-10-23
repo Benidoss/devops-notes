@@ -77,9 +77,12 @@ I removed the file
 ### Les astuces de prudence
 
 ```bash
-  '1' Vérifier avant de supprimer.
-  '2' Supprimer un fichier dont le nom commence par un tiret. Un fichier nommé -test.txt est pris pour une option. Ajoutez --, qui signifie « fin des options » :
-  '3' Supprimer un nom avec des espaces.
+  1 Vérifier avant de supprimer.  
+    ls *.log                                                                               # d'abord, voir ce qui correspond
+    rm *.log \                                                                             # ensuite, supprimer 
+  2 Supprimer un fichier dont le nom commence par un tiret. Un fichier nommé -test.txt est pris pour une option. Ajoutez --, qui signifie « fin des options » :\                                                          # rm -- -test.txt
+
+  3 Supprimer un nom avec des espaces :                                                    # rm "mon fichier.txt"
     
 ```
 
