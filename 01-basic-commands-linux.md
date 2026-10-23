@@ -31,15 +31,15 @@ I created in folder ``computerScience`` the files ``.txt`` such as :
 ## With the command `mv` :
 I modified the file 
 ```bash
-  "ia.txt" in science_of_ia.txt                                                           # mv file.txt new_file.txt
-  Still using "mv" I moved the file "devops.txt" in folder "rh"                           # mv devops.txt ../rh/
+  ia.txt in science_of_ia.txt                                                             # mv file.txt new_file.txt
+  Still using mv I moved the file devops.txt in folder rh                                 # mv devops.txt ../rh/
 ```
 
 ### Others small advanced tips with ``mv``
 ```bash
-  "mv" rapport.txt ../rh/rapport_2026.txt                                                 # move et modify
-  "mv" fichier1.txt fichier2.txt ../rh/                                                   # plusieurs fichiers vers un dossier
-  "mv" *.txt ../rh/                                                                       # tous les .txt du dossier actuel
+  mv rapport.txt ../rh/rapport_2026.txt                                                 # move et modify
+  mv fichier1.txt fichier2.txt ../rh/                                                   # plusieurs fichiers vers un dossier
+  mv *.txt ../rh/                                                                       # tous les .txt du dossier actuel
 ```
 
 
@@ -88,8 +88,12 @@ I removed the file
 ## Les dangers à connaître absolument
 > [!CAUTION]
 > `rm -rf`  supprime tout, sans aucune question. Utilisez-le seulement quand vous êtes certain de la cible, et relisez la commande avant d’appuyer sur Entrée.\
->
->
+```bash
+  rm -rf ./dossier     # supprime "dossier" ✅
+  rm -rf . /dossier    # supprime TOUT le dossier actuel ❌ (un espace en trop !)
+  rm -rf "$DOSSIER"/*
+  
+```
 
 
 ## Other useful commands and advanced tips
