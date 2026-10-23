@@ -87,9 +87,7 @@ I removed the file
 ```
 
 >[!CAUTION]
-> 'rm -rf ./dossier' ; supprime "dossier"
-> 'rm -rf . /dossierr' ;     supprime TOUT le dossier actuel ❌ (un espace en trop !)
->
+>rm rf supprime tout, sans aucune question. Utilisez-le seulement quand vous êtes certain de la cible, et relisez la commande avant d’appuyer sur Entrée.
 
 
 ## Other useful commands and advanced tips
