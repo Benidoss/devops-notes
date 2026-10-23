@@ -147,7 +147,10 @@ Pour tester la restriction, on passe en mode `trainee`, un des utilisateurs s'il
 ```bash
   su - trainee                                                                               # commande pour switch à un autre utilisateur (exit pour revenir).
 ```
-![Test : Sur l'image on voit la prise de main du tarinee et son accès dossier partage qui la proprieté du root](images/connexion_acces.png)
+
+! Test : Sur l'image on voit la prise de main du tarinee et son accès dossier partage qui la proprieté du root (images/connexion_acces.png)
+
+
 ![Test : trainee ne peut pas modifier le fichier](images/modification_impossible.png)
 
 
