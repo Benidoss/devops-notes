@@ -76,9 +76,7 @@ I removed the file
 
 ### Les astuces de prudence
 >[!WARNING]
->1. Vérifier avant de supprimer. Remplacez rm par ls pour voir exactement ce qui sera touché :
->ls *.log        # d'abord, voir ce qui correspond
->rm *.log        # ensuite, supprimer
+>Vérifier avant de supprimer. Remplacez "rm" par "ls" pour voir exactement ce qui sera touché
 >
 
 
