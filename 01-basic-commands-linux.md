@@ -44,9 +44,9 @@ I modified the file
 
 
   > [!WARNING]
-  > `mv` écrase sans prévenir un fichier qui porte déjà le même nom dans la destination.
+  > `mv` écrase sans prévenir un fichier qui porte déjà le même nom dans la destination.\
   > Ajoutez `-i` (*interactive*) pour que `mv` demande confirmation avant d'écraser :
-  >
+  
   ```bash
          mv -i rapport.txt ../rh/
   ```
@@ -82,12 +82,11 @@ I removed the file
     rm *.log                                                                               # ensuite, supprimer 
   2 Supprimer un fichier dont le nom commence par un tiret. Un fichier nommé -test.txt est pris pour une option. Ajoutez --, qui signifie « fin des options » :                                                           # rm -- -test.txt
 
-  3 Supprimer un nom avec des espaces :                                                    # rm "mon fichier.txt"
-    
+  3 Supprimer un nom avec des espaces :                                                    # rm "mon fichier.txt"  
 ```
 
 > [!CAUTION]
-> `rm -rf` supprime tout, sans aucune question. Utilisez-le seulement quand vous êtes certain de la cible, et relisez la commande avant d’appuyer sur Entrée.
+> `rm -rf` supprime tout, sans aucune question. Utilisez-le seulement quand vous êtes certain de la cible, et relisez la commande avant d’appuyer sur Entrée.\
 
 
 ## Other useful commands and advanced tips
