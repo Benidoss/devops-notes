@@ -87,13 +87,15 @@ I removed the file
 
 ## Les dangers à connaître absolument
 > [!CAUTION]
-> `rm -rf`  supprime tout, sans aucune question. Utilisez-le seulement quand vous êtes certain de la cible, et relisez la commande avant d’appuyer sur Entrée.\
-```bash
-  rm -rf ./dossier     # supprime "dossier" ✅
-  rm -rf . /dossier    # supprime TOUT le dossier actuel ❌ (un espace en trop !)
-  rm -rf "$DOSSIER"/*
-  
-```
+
+`rm -rf`  supprime tout, sans aucune question. Utilisez-le seulement quand vous êtes certain de la cible, et relisez la commande avant d’appuyer sur Entrée.\
+
+      ```bash
+        rm -rf ./dossier     # supprime "dossier" ✅
+        rm -rf . /dossier    # supprime TOUT le dossier actuel ❌ (un espace en trop !)
+        rm -rf "$DOSSIER"/*
+        
+      ```
 
 
 ## Other useful commands and advanced tips
@@ -101,7 +103,7 @@ I removed the file
 ```bash   
   pwd                                                                                    # où suis-je ?
   ls -la                                                                                 # lister, y compris les fichiers cachés, avec les détails
-  ls -l 
+  ls -l                                                                                  # lister les fichier cahi
   cd / cd .. / cd ~                                                                      # se déplacer
   mkdir -p a/b/c                                                                         # créer des dossiers (-p : crée aussi les parents)
   touch fichier.txt                                                                      # créer un fichier vide
