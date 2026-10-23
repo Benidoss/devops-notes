@@ -75,20 +75,13 @@ I removed the file
 > `f`	Force : aucune question, aucun message d’erreur.\
 
 ### Les astuces de prudence
->[!WARNING]
+
 ```bash
-  Vérifier avant de supprimer.
-  Supprimer un fichier dont le nom commence par un tiret. Un fichier nommé -test.txt est pris pour une option. Ajoutez --, qui signifie « fin des options » :
-  Supprimer un nom avec des espaces.
+  '1' Vérifier avant de supprimer.
+  '2' Supprimer un fichier dont le nom commence par un tiret. Un fichier nommé -test.txt est pris pour une option. Ajoutez --, qui signifie « fin des options » :
+  '3' Supprimer un nom avec des espaces.
     
 ```
-
-
-#>Vérifier avant de supprimer. Remplacez "rm" par "ls" pour voir exactement ce qui sera touché
->Supprimer un fichier dont le nom commence par un tiret.
->
->
->
 
 
 ## Other useful commands and advanced tips
