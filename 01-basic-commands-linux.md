@@ -47,9 +47,9 @@ I modified the file
   > `mv` écrase sans prévenir un fichier qui porte déjà le même nom dans la destination.
   > Ajoutez `-i` (*interactive*) pour que `mv` demande confirmation avant d'écraser :
   >
-  > ```bash
-  >       mv -i rapport.txt ../rh/
-  > ```
+  ```bash
+         mv -i rapport.txt ../rh/
+  ```
 
 
 ## With the command ``rm``
@@ -67,7 +67,7 @@ I removed the file
 
 ```
 ### Options utiles
->[!TIP]
+> [!TIP]
 > `i`	Demande confirmation pour chaque fichier. C’est la plus sûre.\
 > `I`	Demande une seule confirmation si vous supprimez plus de 3 fichiers ou un dossier. C’est un bon compromis.\
 > `v`	Affiche chaque fichier supprimé (verbose). On voit ce qui se passe.\
@@ -87,7 +87,7 @@ I removed the file
 ```
 
 > [!CAUTION]
-> (rm -rf) supprime tout, sans aucune question. Utilisez-le seulement quand vous êtes certain de la cible, et relisez la commande avant d’appuyer sur Entrée.
+> `rm -rf` supprime tout, sans aucune question. Utilisez-le seulement quand vous êtes certain de la cible, et relisez la commande avant d’appuyer sur Entrée.
 
 
 ## Other useful commands and advanced tips
