@@ -72,19 +72,24 @@ I removed the file
 > `I`	Demande une seule confirmation si vous supprimez plus de 3 fichiers ou un dossier. C’est un bon compromis.\
 > `v`	Affiche chaque fichier supprimé (verbose). On voit ce qui se passe.\
 > `r`	Supprime les dossiers et leur contenu.\
-> `f`	Force : aucune question, aucun message d’erreur.\
+> `f`	Force : aucune question, aucun message d’erreur.
 
 ### Les astuces de prudence
 
 ```bash
   1 Vérifier avant de supprimer.  
     ls *.log                                                                               # d'abord, voir ce qui correspond
-    rm *.log \                                                                             # ensuite, supprimer 
-  2 Supprimer un fichier dont le nom commence par un tiret. Un fichier nommé -test.txt est pris pour une option. Ajoutez --, qui signifie « fin des options » :\                                                          # rm -- -test.txt
+    rm *.log                                                                               # ensuite, supprimer 
+  2 Supprimer un fichier dont le nom commence par un tiret. Un fichier nommé -test.txt est pris pour une option. Ajoutez --, qui signifie « fin des options » :                                                           # rm -- -test.txt
 
   3 Supprimer un nom avec des espaces :                                                    # rm "mon fichier.txt"
     
 ```
+
+>[!CAUTION]
+> 'rm -rf ./dossier' ; supprime "dossier"
+> 'rm -rf . /dossierr' ;     supprime TOUT le dossier actuel ❌ (un espace en trop !)
+>
 
 
 ## Other useful commands and advanced tips
