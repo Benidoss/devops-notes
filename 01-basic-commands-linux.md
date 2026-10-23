@@ -139,8 +139,8 @@ Voici les droits en question :
 Faut toujours se poser les questions suivantes avant d'agire :
 
 > [!TIP]
-> Dans quelle catégorie tombe votre nouveau utilisateur (propriétaire, groupe ou autres) ?
-> Quels droits cette catégorie doit avoir sur le dossier (pour entrer) ?
+> Dans quelle catégorie tombe votre nouveau utilisateur (propriétaire, groupe ou autres) ?\
+> Quels droits cette catégorie doit avoir sur le dossier (pour entrer) ?\
 > Et sur le fichier (pour lire sans modifier) ?
 
 ```bash
