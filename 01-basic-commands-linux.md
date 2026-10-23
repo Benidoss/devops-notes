@@ -12,6 +12,8 @@
 ### Others small advanced tips with ``mkdir``
 ```bash
   mkdir week{1..8}                                                                        # creates week1 to week8 ({1..8} = nomber sequence)
+  mkdir -p test/a/b/c        # dossiers imbriqués
+  mkdir -p test/{x,y,z}      # dossiers côte à côte
 ```
 
 
@@ -24,6 +26,7 @@ I created in folder ``computerScience`` the files ``.txt`` such as :
 ### Others small advanced tips with ``touch``
 ```bash
   touch rapport_{mondy,tuesday,wednesday}.txt                                             # one-click file creation
+  touch test/.secret                                                                      # un fichier caché (le point au début)
 ```
   
 
@@ -87,13 +90,36 @@ I removed the file
 
 ## Les dangers à connaître absolument
 > [!CAUTION]
->`rm -rf`  supprime tout, sans aucune question. Utilisez-le seulement quand vous êtes certain de la cible, et relisez la commande avant d’appuyer sur Entrée.\
+>`rm -rf`  supprime tout, sans aucune question. Utilisez-le seulement quand vous êtes certain de la cible, et relisez la commande avant d’appuyer sur Entrée.
 
 ```bash
         rm -rf ./dossier     # supprime "dossier" ✅
         rm -rf . /dossier    # supprime TOUT le dossier actuel ❌ (un espace en trop !)
         rm -rf "$DOSSIER"/*
         
+```
+
+# User creation and rights restriction commands
+Pour l'occation, j'ai crée un dossir `partage` dans le repertoire `/srv` pour pouvoir faire intervenir les notions de proprietairs.
+```bash
+        sudo mkdir /srv/partage 
+```
+Puis, j'ai créer dans le dossier `partage` un fichier .txt : `consignes.txt` dont j'ai pu éditer avec la commande :
+```bash
+        sudo nano /srv/partage/consignes.txt
+```  
+
+
+
+Ensuite un utilisateur `trainee` 
+```bash
+      sudo adduser trainee                                                           
+```
+ 
+```bash
+  sudo groupadd equipe       # créer un groupe
+  sudo usermod -aG equipe stagiaire    # ajouter stagiaire au groupe equipe
+  su - stagiaire             # devenir stagiaire (exit pour revenir)
 ```
 
 
@@ -103,25 +129,11 @@ I removed the file
   pwd                                                                                    # où suis-je ?
   ls -la                                                                                 # lister, y compris les fichiers cachés, avec les détails
   ls -l                                                                                  # lister les fichier cahi
+  ls -a test                 # .secret apparaît∟
   cd / cd .. / cd ~                                                                      # se déplacer
-  mkdir -p a/b/c                                                                         # créer des dossiers (-p : crée aussi les parents)
   touch fichier.txt                                                                      # créer un fichier vide
   cp / mv / rm                                                                           # copier / déplacer ou renommer / supprimer
   cat / less / head / tail                                                               # lire un fichier (less : q pour quitter)
-  nano fichier.txt                                                                       # éditer un fichier dans le terminal (Ctrl+O sauver, Ctrl+X quitter)
   find ~ -name "*.txt"                                                                   # chercher des fichiers
   grep "mot" fichier.txt                                                                 # chercher du texte dans un fichier
-```
-
-```bash
-  cd ~
-  mkdir -p test/a/b/c        # dossiers imbriqués
-  mkdir -p test/{x,y,z}      # dossiers côte à côte
-  touch test/.secret         # un fichier caché (le point au début)
-  ls test                    # .secret n'apparaît pas
-  ls -a test                 # .secret apparaît∟
-  sudo adduser stagiaire     # créer un utilisateur (interactif, crée son dossier /home)
-  sudo groupadd equipe       # créer un groupe
-  sudo usermod -aG equipe stagiaire    # ajouter stagiaire au groupe equipe
-  su - stagiaire             # devenir stagiaire (exit pour revenir)
 ```
