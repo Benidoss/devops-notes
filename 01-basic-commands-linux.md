@@ -93,32 +93,57 @@ I removed the file
 >`rm -rf`  supprime tout, sans aucune question. Utilisez-le seulement quand vous êtes certain de la cible, et relisez la commande avant d’appuyer sur Entrée.
 
 ```bash
-        rm -rf ./dossier     # supprime "dossier" ✅
-        rm -rf . /dossier    # supprime TOUT le dossier actuel ❌ (un espace en trop !)
+        rm -rf ./dossier                                                                    # supprime "dossier" ✅
+        rm -rf . /dossier                                                                   # supprime TOUT le dossier actuel ❌ (un espace en trop !).
         rm -rf "$DOSSIER"/*
         
 ```
 
 # User creation and rights restriction commands
+
 Pour l'occation, j'ai crée un dossir `partage` dans le repertoire `/srv` pour pouvoir faire intervenir les notions de proprietairs.
 ```bash
-        sudo mkdir /srv/partage 
+    sudo mkdir /srv/partage 
 ```
-Puis, j'ai créer dans le dossier `partage` un fichier .txt : `consignes.txt` dont j'ai pu éditer avec la commande :
+
+Puis, j'ai crée dans le dossier `partage` un fichier .txt : `consignes.txt` dont j'ai pu éditer avec la commande :
 ```bash
-        sudo nano /srv/partage/consignes.txt
+    sudo nano /srv/partage/consignes.txt
 ```  
 
-
-
-Ensuite un utilisateur `trainee` 
+Afin de pouvoir mettre les droits sur le dossier ainsi que le fichier , j'ai crée groupe utilisateur :
 ```bash
-      sudo adduser trainee                                                           
+    sudo groupadd partage                                                                   # Commande pour créer utilisateur (attention, ce n'est pas un dossier, plutôt un fichier sys qui se retrouve dans le repertoire /etc/).
 ```
- 
+Dans lequel j'ai mis mon utilisateur `tarinee` via la commande :
 ```bash
-  sudo groupadd equipe       # créer un groupe
-  sudo usermod -aG equipe stagiaire    # ajouter stagiaire au groupe equipe
+    sudo usermod -aG partage trainee
+```
+Que j'ai crée avec la commande :
+```bash
+      sudo adduser trainee                                                                   # Commande pour ajouter un utilisateur.
+```
+
+Et j'y ai mis des droits de `lecture` et de `d'execution` en donnant au groupe `partage`le dossier `partage` qui se trouve dans `/srv`, ainsi que le fichier qui s'y trouve :
+```bash
+    sudo chown root:partage /srv/partage
+    sudo chown root:partage /srv/partage/consigne.txt
+```
+Voici les droits en question :
+```bash
+    sudo chmod 750 /srv/partage                                                              # pour le groupe partage, j'ai mis sur le dossier des droits de lecture et d'exécution.
+    sudo chmod 640 /srv/partage/consigne.txt                                                 # pour le groupe partage, j'ai mis sur le fichier des droits de lecture uniquement.
+```
+
+### Bon à savoir
+Faut toujours se poser les questions suivantes avant d'agire :
+
+> [!TIP]
+> Dans quelle catégorie tombe votre nouveau utilisateur (propriétaire, groupe ou autres) ?
+> Quels droits cette catégorie doit avoir sur le dossier (pour entrer) ?
+> Et sur le fichier (pour lire sans modifier) ?
+
+```bash
   su - stagiaire             # devenir stagiaire (exit pour revenir)
 ```
 
@@ -126,14 +151,15 @@ Ensuite un utilisateur `trainee`
 ## Other useful commands and advanced tips
 
 ```bash   
-  pwd                                                                                    # où suis-je ?
-  ls -la                                                                                 # lister, y compris les fichiers cachés, avec les détails
-  ls -l                                                                                  # lister les fichier cahi
-  ls -a test                 # .secret apparaît∟
-  cd / cd .. / cd ~                                                                      # se déplacer
-  touch fichier.txt                                                                      # créer un fichier vide
-  cp / mv / rm                                                                           # copier / déplacer ou renommer / supprimer
-  cat / less / head / tail                                                               # lire un fichier (less : q pour quitter)
-  find ~ -name "*.txt"                                                                   # chercher des fichiers
-  grep "mot" fichier.txt                                                                 # chercher du texte dans un fichier
+  pwd                                                                                        # où suis-je ?
+  ls -la                                                                                     # lister, y compris les fichiers cachés, avec les détails
+  ls -l                                                                                      # lister les fichier cahi
+  ls -a test                                                                                 # .secret apparaît∟
+  cd / cd .. / cd ~                                                                          # se déplacer
+  touch fichier.txt                                                                          # créer un fichier vide
+  cp / mv / rm                                                                               # copier / déplacer ou renommer / supprimer
+  cat / less / head / tail                                                                   # lire un fichier (less : q pour quitter)
+  find ~ -name "*.txt"                                                                       # chercher des fichiers
+  grep "mot" fichier.txt                                                                     # chercher du texte dans un fichier
+  sudo setfacl -m u:trainee:r /srv/partage/consigne.txt                                      # pour donner des droits à un seul utilisateur. 
 ```
