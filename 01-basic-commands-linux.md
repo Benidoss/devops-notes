@@ -84,9 +84,12 @@ I removed the file
 
   3 Supprimer un nom avec des espaces :                                                    # rm "mon fichier.txt"  
 ```
+
 ## Les dangers à connaître absolument
 > [!CAUTION]
-> `rm -rf` supprime tout, sans aucune question. Utilisez-le seulement quand vous êtes certain de la cible, et relisez la commande avant d’appuyer sur Entrée.\
+> `rm -rf`  supprime tout, sans aucune question. Utilisez-le seulement quand vous êtes certain de la cible, et relisez la commande avant d’appuyer sur Entrée.\
+>
+>
 
 
 ## Other useful commands and advanced tips
