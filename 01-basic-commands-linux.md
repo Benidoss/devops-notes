@@ -153,8 +153,9 @@ Pour tester la restriction, on passe en mode `trainee`, un des utilisateurs s'il
 
 ![Test : trainee ne peut pas modifier le fichier](images/modification_impossible.png)
 
+## Commande de gestion des utilisateurs 
 >[!TIP]
-  ## Commande de gestion des utilisateurs 
+
     ```bash
         w                                                                                  # Shows which users are logged in.  
         sudo deluser <username>                                                            # Deletes a user.  
