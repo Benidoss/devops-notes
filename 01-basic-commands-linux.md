@@ -148,10 +148,28 @@ Pour tester la restriction, on passe en mode `trainee`, un des utilisateurs s'il
   su - trainee                                                                               # commande pour switch à un autre utilisateur (exit pour revenir).
 ```
 
-! Test : Sur l'image on voit la prise de main du tarinee et son accès dossier partage qui la proprieté du root (images/connexion_acces.png)
+[!Test : Sur l'image on voit la prise de main du tarinee et son accès dossier partage qui la proprieté du root](images/connexion_acces.png)
 
 
 ![Test : trainee ne peut pas modifier le fichier](images/modification_impossible.png)
+
+>[!TIP]
+  ## Commande de gestion des utilisateurs 
+    ```bash
+        w                                                                                  # Shows which users are logged in.  
+        sudo deluser <username>                                                            # Deletes a user.  
+        sudo passwd <username>                                                             # Sets or changes the password for a user.  
+        sudo passwd -l <username>                                                          # Locks a user account.  
+        sudo passwd -u <username>                                                          # Unlocks a user password.  
+        sudo chage <username>                                                              # Sets user password expiration date.
+    ```
+  ## Commande de gestion des utilisateurs
+    ```bash
+        id [username]                                                                      # Displays user and group IDs.  
+        groups [username]                                                                  # Shows the groups a user belongs to.  
+        sudo addgroup <groupname>                                                          # Creates a new group.  
+        sudo delgroup <groupname>                                                          # Deletes a group.
+    ``` 
 
 
 ## Other useful commands and advanced tips
@@ -168,4 +186,77 @@ Pour tester la restriction, on passe en mode `trainee`, un des utilisateurs s'il
   find ~ -name "*.txt"                                                                       # chercher des fichiers
   grep "mot" fichier.txt                                                                     # chercher du texte dans un fichier
   sudo setfacl -m u:trainee:r /srv/partage/consigne.txt                                      # pour donner des droits à un seul utilisateur. 
+```
+
+
+
+
+# Paquets, processus, services et surveillance
+
+## `Les paquets`
+`apt` est le gestionnaire de paquets d’Ubuntu permettant de télécharger et d'installer les logiciels depuis leurs dépôts officiels.
+
+```bash
+  sudo apt update                                                                            # pour mettre à jour la liste des logiciels disponibles
+  apt search nom_logiciel                                                                    # pour chercher d'un logiciel
+  sudo apt install nom_logiciel -y                                                           # pour installer (-y : répond oui automatiquement)
+  sudo apt remove nom_logiciel                                                               # pour désinstaller un logiciel
+```
+   ### Autres commande avec `apt`
+   ```bash
+        sudo apt install -f --reinstall <package>                                            #  Reinstalls a broken package.  
+        apt-cache policy <package>                                                           #  Lists available package versions. 
+        sudo apt upgrade                                                                     #  Upgrades all upgradable packages.  
+        sudo apt purge <package>                                                             #  Removes a package and all its configuration files.
+   ```
+
+
+
+
+## `Les services`
+Pour gèrer les service qui sont des programmes qui tournent en permanence en arrière-plan on utilisen `systemctl` 
+
+```bash
+  sudo systemctl status nom_logiciel                                                                             # est-il actif ? (q pour quitter)
+  sudo systemctl stop nom_logiciel                                                                   # l'arrêter
+  sudo systemctl start nom_logiciel                                                                  # le démarrer
+  sudo systemctl restart nom_logiciel                                                                # le redémarrer (après un changement de configuration)
+  sudo systemctl enable nom_logiciel                                                                 # le lancer automatiquement au démarrage du serveur
+```
+  ### Commandes de gestion des services
+  ```bash
+      sudo systemctl reload <service>                                                                # Reloads a service’s configuration without interrupting its operation. 
+      journalctl -f                                                                                  # Follows the journal, showing new log messages in real time. 
+      journalctl -u <unit_name>                                                                      # Displays logs for a specific systemd unit.
+  ```
+
+
+
+
+## `Les processus`
+Un processus est un programme en cours d’exécution. Chacun a un numéro unique, le PID.
+
+```bash
+  ps aux                                                                                             # Commandes pour voir tous les processus en cour
+  ps aux | grep nginx                                                                                # seulement ceux de nginx
+  top                                                                                                # vue en direct, triée par consommation (q pour quitter)
+  kill PID                                                                                           # demander à un processus de s'arrêter
+```
+
+## Les logs
+Quand un service plante, la réponse est presque toujours dans les journaux. Les lire, c’est le premier réflexe d’un DevOps.
+
+```bash
+    journalctl -u nginx                                                                              # journaux du service nginx
+    journalctl -u nginx --since today                                                                # seulement aujourd'hui
+    sudo tail -f /var/log/nginx/access.log                                                           # suivre les visites en direct (Ctrl+C pour sortir)
+```
+
+## Surveillance de machine
+
+```bash
+    df -h                                                                                            # espace disque (-h : en Go/Mo, lisible par un humain)
+    du -sh ~/*                                                                                       # taille de chaque dossier dans ~
+    free -h                                                                                          # mémoire vive utilisée et libre
+    uptime                                                                                           # depuis quand le serveur tourne + charge
 ```
