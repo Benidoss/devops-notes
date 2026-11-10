@@ -254,3 +254,18 @@ du -sh ~/*   # taille de chaque dossier dans ~
 free -h      # mémoire vive utilisée et libre
 uptime       # depuis quand le serveur tourne + charge
 ```
+
+
+
+
+```bash
+tar -czf archive.tar.gz dossier/    # créer une archive compressée (c=créer, z=compresser, f=fichier)
+tar -tzf archive.tar.gz             # lister le contenu d'une archive, pour vérifier
+[ -d "$DOSSIER" ]                   # vrai si le dossier existe
+[ -z "$VARIABLE" ]                  # vrai si la variable est VIDE
+ls -1t                              # lister un fichier par ligne, du plus récent au plus ancien
+tail -n +8                          # afficher à partir de la 8e ligne
+xargs -r rm --                      # supprimer chaque fichier reçu (-r : ne rien faire si la liste est vide)
+$(( NB + 1 ))                       # faire un calcul
+
+```
