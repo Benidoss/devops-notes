@@ -5,7 +5,7 @@ La VM est en NAT : une redirection de port VirtualBox renvoie le port 2222 de Wi
 vers le port 22 (SSH) de la VM.
 
 ```bash
-ssh utilisateur@127.0.0.1 -p 2222   # Connexion à la VM depuis la machine hot
+ssh utilisateur@127.0.0.1 -p 2222   # Connexion à la VM depuis la machine hôte
 ```
 
 ## Raccourci de connexion (~/.ssh/config sur Windows)
